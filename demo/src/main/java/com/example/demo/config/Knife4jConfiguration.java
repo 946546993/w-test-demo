@@ -13,6 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 @EnableSwagger2WebMvc
 public class Knife4jConfiguration {
 
+    /**
+     * 访问    http://IP:serverPort/doc.html  访问接口文档
+     * @return
+     */
     @Bean(value = "defaultApi2")
     public Docket defaultApi2() {
         Docket docket=new Docket(DocumentationType.SWAGGER_2)
