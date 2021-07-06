@@ -3,5 +3,3 @@ spring:
         name: test-demo
 server:
     port: 8001
-    servlet:
-        context-path: /demo

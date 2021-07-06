@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.config.MySpringConfigurator;
+
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -10,7 +12,7 @@ import javax.websocket.server.ServerEndpoint;
  * @ServerEndpoint 注解是一个类层次的注解，它的功能主要是将目前的类定义成一个websocket服务器端,
  * 注解的值将被用于监听用户连接的终端访问URL地址,客户端可以通过这个URL来连接到WebSocket服务器端
  */
-@ServerEndpoint("/websocket")
+@ServerEndpoint(value = "/websocket",configurator = MySpringConfigurator.class)
 public class WebSocketTest {
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
     private static int onlineCount = 0;
